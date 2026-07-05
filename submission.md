@@ -46,6 +46,7 @@ I looked at the streak_service.py in services directory, when I see line 73: eli
 According to the function docstring, when the user listens the song yesterday, the streak days should always increment by 1 regardless of if it's Sunday or (today.weekday() != Sunday) or not, this implementation would cause Sunday unreachable, and always gets resets to 1
 
 ## Your fix and side-effect check
+
 I updated line 73 so that it checks whether the user has listened to a song yesterday, and if so, increment the streak days by 1, without checking whether it's a Sunday or not. I also checked record_listening_event and get_streak functions, to make sure these functionalities didn't get impacted
 
 ## `feed_service.py`
@@ -88,7 +89,7 @@ I looked at the feed_service.py file, and the seed_data.py, I saw in the seed_da
 According to the function docstring, the intention was to return the song that friends have listened within the past 30 minutes, so when the threshold has been set to 24 hours, it broadens the window, and included songs that friends have listened to yesterday (within 24 hours).
 
 ## Your fix and side-effect check
-# 2
+
 I implemented the change that the RECENT_THRESHOLD in line 13 of feed_service.py has been updated to 30 minutes, that makes the function to work as intended and follows the design. Other related functions such as get_friends_listening_now, get_activity_feed functions are also checked to make sure they do not get impacted.
 
 
