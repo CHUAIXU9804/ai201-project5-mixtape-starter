@@ -1,4 +1,7 @@
 ## `streak_service.py`
+### AI Usage
+
+I used Claude to understand what each function does within search_service.py, streak_service.py, and feed_service.py. I found the AI's explanation pointed me in the wrong direction when I was trying to reproduce the bug, but the AI did help me to provide suggestions on writing standalone test scripts to reproduce the bugs I selected.
 
 ### Issue number and title
 

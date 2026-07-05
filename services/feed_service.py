@@ -9,8 +9,9 @@ from sqlalchemy import desc
 from app import db
 from models import User, Song, ListeningEvent
 
-
-RECENT_THRESHOLD = timedelta(hours=24)
+# FIX: Threshold should be fixed
+RECENT_THRESHOLD = timedelta(minutes=30)
+# RECENT_THRESHOLD = timedelta(hours=24)
 
 
 def get_friends_listening_now(user_id: str) -> list[dict]:
