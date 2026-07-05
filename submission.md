@@ -133,5 +133,5 @@ I looked at the file search_service.py, and when I read line 27, I realized it c
 Line 27 in search_service.py joins the tag column into the query, however, the intention of the function is to search songs by author name or song title, tags are never needed, and it produces one row per (song, tag) pair, which is why a 3-tag song generates 3 rows.
 
 ## Your fix and side-effect check
-# 3
+
 I removed line 27 from the search_service.py so it generates one dictionary for each song without using tags, and filters by author name and song title. I also checked the search_songs function, the route /songs/search, and get_song / Songs / <id> route, to make sure these routes don't get impacted with the change.
